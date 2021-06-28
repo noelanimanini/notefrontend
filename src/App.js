@@ -4,7 +4,7 @@ import NoteContainer from "./components/NoteContainer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
-const api = "https://notebackend.herokuapp.com";
+const api = "http://localhost:3000";
 
 class App extends Component {
   state = {
@@ -45,6 +45,7 @@ class App extends Component {
 
   handleLogin = (e, loginInfo) => {
     e.preventDefault();
+    console.log(api);
     fetch(api + "/login", {
       method: "POST",
       headers: {
@@ -58,7 +59,7 @@ class App extends Component {
   };
 
   handleAuthResponse = (data) => {
-    console.log(data);
+    console.log("this is handle response " + data);
     if (data.username) {
       const { username, id, token } = data;
 

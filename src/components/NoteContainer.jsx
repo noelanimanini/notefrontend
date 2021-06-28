@@ -23,7 +23,7 @@ class NoteContainer extends Component {
 
   fetchNotes = () => {
     const token = localStorage.token;
-    fetch("http://localhost:3000/api/v1/notes", {
+    fetch("http://localhost:3000/notes", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ class NoteContainer extends Component {
   submitHandler = (note, e) => {
     const token = localStorage.token;
     e.preventDefault();
-    fetch(`http://localhost:3000/api/v1/notes/${note.notecontent.id}`, {
+    fetch(`http://localhost:3000/notes/${note.notecontent.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ class NoteContainer extends Component {
       body: JSON.stringify({
         title: note.notecontent.title,
         body: note.notecontent.body,
-        user_id: note.notecontent.user.id,
+        user_id: note.notecontent.user_id,
       }),
     })
       .then((response) => response.json())
@@ -100,7 +100,7 @@ class NoteContainer extends Component {
     const token = localStorage.token;
 
     e.persist();
-    fetch("http://localhost:3000/api/v1/notes", {
+    fetch("http://localhost:3000/notes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -144,7 +144,7 @@ class NoteContainer extends Component {
   handleDelete = (props) => {
     const token = localStorage.token;
 
-    fetch(`http://localhost:3000/api/v1/notes/${props.notecontent.id}`, {
+    fetch(`http://localhost:3000/notes/${props.notecontent.id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     }).then(() =>
