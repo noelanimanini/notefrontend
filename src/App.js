@@ -50,11 +50,13 @@ class App extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json",
       },
+
       body: JSON.stringify(loginInfo),
     })
       .then((response) => response.json())
-      .then((data) => this.handleAuthResponse(data))
+      .then((data) => console.log(data))
       .catch((error) => alert(error));
   };
 
