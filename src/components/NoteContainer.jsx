@@ -83,6 +83,7 @@ class NoteContainer extends Component {
             foundNotes: prevState.foundNotes.map((oldNote) =>
               oldNote.id === freshNote.id ? freshNote : oldNote
             ),
+            clicked: false
           };
         });
       });
