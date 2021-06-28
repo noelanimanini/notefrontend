@@ -20,7 +20,6 @@ class SignUp extends React.Component {
   };
 
   signUpChange = (e) => {
-    console.log(e.target.name);
     this.setState({
       [e.target.name]: e.target.value,
     });

@@ -46,7 +46,6 @@ class NoteContainer extends Component {
   };
 
   handleEditButton = (note) => {
-    console.log(note);
     this.setState({
       clicked: true,
     });
@@ -54,7 +53,6 @@ class NoteContainer extends Component {
 
   changeNote = (e) => {
     e.persist();
-    console.log(e.target.name);
     this.setState((prevState) => ({
       addednote: {
         ...prevState.addednote,
@@ -115,7 +113,7 @@ class NoteContainer extends Component {
       .then((response) => response.json())
       .then((newNote) =>
         this.setState((prevState) => {
-          console.log([...prevState.foundNotes]);
+          // console.log([...prevState.foundNotes]);
           return { foundNotes: [...prevState.foundNotes, newNote] };
         })
       );
@@ -161,7 +159,6 @@ class NoteContainer extends Component {
   };
 
   render() {
-    console.log(this.state.foundNotes);
     return (
       <Fragment>
         <NavBar handleLogout={this.props.handleLogout} />

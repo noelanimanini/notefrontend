@@ -45,7 +45,6 @@ class App extends Component {
 
   handleLogin = (e, loginInfo) => {
     e.preventDefault();
-    console.log(api);
     fetch(api + "/login", {
       method: "POST",
       headers: {
@@ -56,12 +55,12 @@ class App extends Component {
       body: JSON.stringify(loginInfo),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => this.handleAuthResponse(data))
       .catch((error) => alert(error));
   };
 
   handleAuthResponse = (data) => {
-    console.log("this is handle response " + data);
+    // this is the data from the json to authenticate the user
     if (data.username) {
       const { username, id, token } = data;
 
@@ -84,7 +83,6 @@ class App extends Component {
   };
 
   handleChange = (e) => {
-    console.log(e.target.name);
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -108,7 +106,7 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((data) => this.handleAuthResponse(data))
-      .catch(console.log);
+      .catch((error) => alert(error));
   };
 
   render() {
