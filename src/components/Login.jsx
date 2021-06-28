@@ -26,76 +26,74 @@ class Login extends React.Component {
   };
 
   render() {
-    const paperStyle = {
-      padding: 20,
-      height: "50vh",
-      width: 280,
-      margin: "20px auto",
-    };
     const avatarStyle = { backgroundColor: "pink" };
     const buttonStyle = { margin: "8px 0" };
     return (
-      <form>
-        <Grid>
-          <Paper elevation={10} style={paperStyle}>
-            <Grid align="center">
-              <Avatar style={avatarStyle}>
-                <LockOutlinedIcon></LockOutlinedIcon>
-              </Avatar>
-              <h2>Sign In</h2>
-            </Grid>
-            <TextField
-              label="Username"
-              placeholder="Enter Username"
-              onChange={(e) => this.handleChange(e)}
-              name="username"
-              fullWidth
-              required
-            />
+      <div className="loginParent">
+        <div className="login">
+          <form>
+            <Grid>
+              <Paper elevation={10} className="login">
+                <Grid align="center">
+                  <Avatar style={avatarStyle}>
+                    <LockOutlinedIcon></LockOutlinedIcon>
+                  </Avatar>
+                  <h2>Sign In</h2>
+                </Grid>
+                <TextField
+                  label="Username"
+                  placeholder="Enter Username"
+                  onChange={(e) => this.handleChange(e)}
+                  name="username"
+                  fullWidth
+                  required
+                />
 
-            <TextField
-              label="Password"
-              placeholder="Enter Password"
-              type="password"
-              onChange={(e) => this.handleChange(e)}
-              name="password"
-              fullWidth
-              required
-            />
-            <FormControlLabel
-              control={<Checkbox name="checkedB" color="primary" />}
-              label="Remember Me"
-            />
-            <Button
-              type="submit"
-              value="submit"
-              background-color="white"
-              fullWidth
-              variant="contained"
-              style={buttonStyle}
-              onClick={(e) => this.props.handleLogin(e, this.state)}
-            >
-              Sign In
-            </Button>
-            <Typography>
-              {" "}
-              Don't have an account?
-              <Link to="/signup">Sign Up</Link>
-            </Typography>
-            {/* <Typography>
+                <TextField
+                  label="Password"
+                  placeholder="Enter Password"
+                  type="password"
+                  onChange={(e) => this.handleChange(e)}
+                  name="password"
+                  fullWidth
+                  required
+                />
+                <FormControlLabel
+                  control={<Checkbox name="checkedB" color="primary" />}
+                  label="Remember Me"
+                />
+                <Button
+                  type="submit"
+                  value="submit"
+                  background-color="white"
+                  fullWidth
+                  variant="contained"
+                  style={buttonStyle}
+                  onClick={(e) => this.props.handleLogin(e, this.state)}
+                >
+                  Sign In
+                </Button>
+                <Typography>
+                  {" "}
+                  Don't have an account?
+                  <Link to="/signup">Sign Up</Link>
+                </Typography>
+                {/* <Typography>
                         <Link href="#" >
-                            Forgot Password?
+                        Forgot Password?
                         </Link>
                         </Typography>
                         <Typography> Do you have an account?
                         <Link to="/asdfas" >
-                            Sign Up
+                        Sign Up
                         </Link>
-                        </Typography> */}
-            {/* for the links above, consult https://material-ui.com/guides/composition/#link when you have time. */}
-          </Paper>
-        </Grid>
-      </form>
+                      </Typography> */}
+                {/* for the links above, consult https://material-ui.com/guides/composition/#link when you have time. */}
+              </Paper>
+            </Grid>
+          </form>
+        </div>
+      </div>
     );
   }
 }

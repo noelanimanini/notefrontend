@@ -4,7 +4,7 @@ import React from "react";
 const NavBar = (props) => {
   console.log(props);
   return (
-    <div>
+    <div className="navBarSpace">
       <button className="logout-button" onClick={props.handleLogout}>
         Logout
       </button>

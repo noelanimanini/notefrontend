@@ -67,7 +67,7 @@ class NoteContainer extends Component {
     const token = localStorage.token;
     e.preventDefault();
     fetch(`http://localhost:3000/notes/${note.notecontent.id}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

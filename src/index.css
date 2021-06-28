@@ -45,10 +45,13 @@ p.instructions {
 .nav-item-button {
   color: white;
 }
+#search-bar {
+  border-radius: 30px 30px 30px 30px;
+}
 
 .nav-bar {
   width: 100%;
-  background-image: linear-gradient(to right top, #8c33e3, #696ce8, #4a9eec);
+  background-image: linear-gradient(to right top, #ffbe0b, #fb5607, #ff006e);
   background-repeat: no-repeat;
   font-family: "IBM Plex Mono";
   font-size: 16px;
@@ -56,15 +59,62 @@ p.instructions {
   font-weight: bolder;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  border-radius: 30px 30px 30px 30px;
+  margin: 0 auto;
+  width: 99%;
 }
-
+.navBarSpace {
+  display: flex;
+  margin: 10px;
+}
 .nav-item {
   list-style: none;
   color: white;
   padding: 4px;
+}
+
+.loginParent {
+  animation: animateBg 10s linear infinite;
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
+  display: flex;
+  /* background-color: inherit; */
+}
+@keyframes animateBg {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+.login {
+  position: relative;
+  z-index: 1000;
+  padding: 10px;
+  height: 40vh;
+  width: 280px;
+  margin: 20px auto;
+  background-color: inherit;
+}
+
+.signupparent {
+  animation: animateBg 10s linear infinite;
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
+  display: flex;
+}
+
+.signup {
+  position: relative;
+  z-index: 1000;
+  padding: 10px;
+  height: 40vh;
+  width: 280px;
+  margin: 20px auto;
+  background-color: inherit;
 }
 
 .filter {
@@ -73,6 +123,9 @@ p.instructions {
   justify-content: center;
   align-items: center;
   border: 2px dashed grey;
+  /* border: none; */
+  border-radius: 30px 30px 30px 30px;
+  margin: 0.5rem;
 }
 
 input {
@@ -111,7 +164,7 @@ div.sidebar ul li:first-child {
 
 div.sidebar ul li:hover {
   /* background-color: yellow; */
-  background-image: linear-gradient(#e6e6e6, #f7f7f7);
+  background-image: linear-gradient(#ffd6a5, #fdffb6);
   background-repeat: no-repeat;
   overflow-y: scroll;
 }
@@ -143,10 +196,20 @@ div.sidebar ul li:hover {
   width: 25%;
   overflow: scroll;
   height: 75vh;
+  border: none;
+  border-radius: 30px 30px 30px 30px;
+  background-image: linear-gradient(to right top, #ffadad, #ffd6a5, #fdffb6);
+  background-repeat: no-repeat;
+  margin: 0.5rem;
 }
 
 .detail {
   width: 75%;
+  border: none;
+  border-radius: 30px 30px 30px 30px;
+  background-image: linear-gradient(to right top, #caffbf, #9bf6ff, #a0c4ff);
+  /* background-repeat: repeat; */
+  margin: 0.5rem;
 }
 
 .note-editor {
