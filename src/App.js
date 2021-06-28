@@ -4,7 +4,7 @@ import NoteContainer from "./components/NoteContainer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
-const api = "http://localhost:3000";
+const api = "https://notebackendapi.herokuapp.com";
 
 class App extends Component {
   state = {

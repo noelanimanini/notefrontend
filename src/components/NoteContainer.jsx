@@ -23,7 +23,7 @@ class NoteContainer extends Component {
 
   fetchNotes = () => {
     const token = localStorage.token;
-    fetch("http://localhost:3000/notes", {
+    fetch("https://notebackendapi.herokuapp.com/notes", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ class NoteContainer extends Component {
   submitHandler = (note, e) => {
     const token = localStorage.token;
     e.preventDefault();
-    fetch(`http://localhost:3000/notes/${note.notecontent.id}`, {
+    fetch(`https://notebackendapi.herokuapp.com/notes/${note.notecontent.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ class NoteContainer extends Component {
     const token = localStorage.token;
 
     e.persist();
-    fetch("http://localhost:3000/notes", {
+    fetch("https://notebackendapi.herokuapp.com/notes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -144,10 +144,13 @@ class NoteContainer extends Component {
   handleDelete = (props) => {
     const token = localStorage.token;
 
-    fetch(`http://localhost:3000/notes/${props.notecontent.id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    }).then(() =>
+    fetch(
+      `https://notebackendapi.herokuapp.com/notes/${props.notecontent.id}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    ).then(() =>
       this.setState((prevState) => {
         let minusNotes = [...prevState.foundNotes].filter(
           (note) => note.id !== props.notecontent.id
