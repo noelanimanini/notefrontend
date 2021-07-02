@@ -65,7 +65,7 @@ class NoteContainer extends Component {
     const token = localStorage.token;
     e.preventDefault();
     fetch(`https://notebackendapi.herokuapp.com/notes/${note.notecontent.id}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -76,7 +76,7 @@ class NoteContainer extends Component {
         user_id: note.notecontent.user_id,
       }),
     })
-      .then((response) => console.log(response))
+      .then((response) => response.json())
       .then((freshNote) => {
         this.setState((prevState) => {
           return {
