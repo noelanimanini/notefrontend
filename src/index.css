@@ -79,9 +79,12 @@ p.instructions {
   animation: animateBg 10s linear infinite;
   background: linear-gradient(#e66465, #9198e5);
   height: 100vh;
+  margin: 0 auto;
   display: flex;
-  /* background-color: inherit; */
+  justify-content: center;
+  align-items: center;
 }
+
 @keyframes animateBg {
   0% {
     background-position: 0% 0%;
@@ -91,30 +94,71 @@ p.instructions {
   }
 }
 .login {
-  position: relative;
-  z-index: 1000;
+  width: 25%;
+  background-color: white;
   padding: 10px;
-  height: 40vh;
-  width: 280px;
-  margin: 20px auto;
-  background-color: inherit;
+  height: 60%;
+  border-radius: 20px 20px 20px 20px;
+}
+.signup {
+  width: 25%;
+  background-color: white;
+  padding: 10px;
+  height: 60%;
+  border-radius: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    height: 60%;
+    border-radius: 20px 20px 20px 20px;
+  }
+  .signup {
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    height: 60%;
+    border-radius: 20px 20px 20px 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .login {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    height: 50%;
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signup {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    height: 50%;
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .signupparent {
   animation: animateBg 10s linear infinite;
   background: linear-gradient(#e66465, #9198e5);
   height: 100vh;
+  margin: 0 auto;
   display: flex;
-}
-
-.signup {
-  position: relative;
-  z-index: 1000;
-  padding: 10px;
-  height: 40vh;
-  width: 280px;
-  margin: 20px auto;
-  background-color: inherit;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter {

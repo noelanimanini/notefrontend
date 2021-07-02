@@ -76,14 +76,14 @@ class NoteContainer extends Component {
         user_id: note.notecontent.user_id,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => console.log(response))
       .then((freshNote) => {
         this.setState((prevState) => {
           return {
             foundNotes: prevState.foundNotes.map((oldNote) =>
               oldNote.id === freshNote.id ? freshNote : oldNote
             ),
-            clicked: false
+            clicked: false,
           };
         });
       });

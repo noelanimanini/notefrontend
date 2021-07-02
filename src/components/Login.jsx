@@ -31,65 +31,52 @@ class Login extends React.Component {
       <div className="loginParent">
         <div className="login">
           <form>
-            <Grid>
-              <Paper elevation={10} className="login">
-                <Grid align="center">
-                  <Avatar style={avatarStyle}>
-                    <LockOutlinedIcon></LockOutlinedIcon>
-                  </Avatar>
-                  <h2>Sign In</h2>
-                </Grid>
-                <TextField
-                  label="Username"
-                  placeholder="Enter Username"
-                  onChange={(e) => this.handleChange(e)}
-                  name="username"
-                  fullWidth
-                  required
-                />
+            <div>
+              <Grid align="center">
+                <Avatar style={avatarStyle}>
+                  <LockOutlinedIcon></LockOutlinedIcon>
+                </Avatar>
+                <h2>Sign In</h2>
+              </Grid>
+              <TextField
+                label="Username"
+                placeholder="Enter Username"
+                onChange={(e) => this.handleChange(e)}
+                name="username"
+                fullWidth
+                required
+              />
 
-                <TextField
-                  label="Password"
-                  placeholder="Enter Password"
-                  type="password"
-                  onChange={(e) => this.handleChange(e)}
-                  name="password"
-                  fullWidth
-                  required
-                />
-                <FormControlLabel
-                  control={<Checkbox name="checkedB" color="primary" />}
-                  label="Remember Me"
-                />
-                <Button
-                  type="submit"
-                  value="submit"
-                  background-color="white"
-                  fullWidth
-                  variant="contained"
-                  style={buttonStyle}
-                  onClick={(e) => this.props.handleLogin(e, this.state)}
-                >
-                  Sign In
-                </Button>
-                <Typography>
-                  {" "}
-                  Don't have an account?
-                  <Link to="/signup">Sign Up</Link>
-                </Typography>
-                {/* <Typography>
-                        <Link href="#" >
-                        Forgot Password?
-                        </Link>
-                        </Typography>
-                        <Typography> Do you have an account?
-                        <Link to="/asdfas" >
-                        Sign Up
-                        </Link>
-                      </Typography> */}
-                {/* for the links above, consult https://material-ui.com/guides/composition/#link when you have time. */}
-              </Paper>
-            </Grid>
+              <TextField
+                label="Password"
+                placeholder="Enter Password"
+                type="password"
+                onChange={(e) => this.handleChange(e)}
+                name="password"
+                fullWidth
+                required
+              />
+              <FormControlLabel
+                control={<Checkbox name="checkedB" color="primary" />}
+                label="Remember Me"
+              />
+              <Button
+                type="submit"
+                value="submit"
+                background-color="white"
+                fullWidth
+                variant="contained"
+                style={buttonStyle}
+                onClick={(e) => this.props.handleLogin(e, this.state)}
+              >
+                Sign In
+              </Button>
+              <Typography>
+                {" "}
+                Don't have an account?
+                <Link to="/signup">Sign Up</Link>
+              </Typography>
+            </div>
           </form>
         </div>
       </div>
